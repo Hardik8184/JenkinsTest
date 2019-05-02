@@ -33,7 +33,7 @@ android {
 
   android.applicationVariants.all { variant ->
     variant.outputs.all {
-      outputFileName = "TOI_Android_${variant.name}_${variant.versionName}.apk"
+      outputFileName = "BVDemo_${variant.name}_${variant.versionName}.apk"
     }
   }
 
