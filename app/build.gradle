@@ -6,12 +6,12 @@ apply plugin: 'io.fabric'
 android {
 
   signingConfigs {
-      release {
-          storeFile file('G:\\Hardik\\KeyStore\\common.jks')
-          storePassword 'common@123'
-          keyAlias = 'common'
-          keyPassword 'common@123'
-      }
+    release {
+      storeFile file('G:\\Hardik\\KeyStore\\common.jks')
+      storePassword 'common@123'
+      keyAlias = 'common'
+      keyPassword 'common@123'
+    }
   }
   compileSdkVersion rootProject.compileSdkVersion
   buildToolsVersion rootProject.buildToolsVersion
@@ -47,7 +47,7 @@ android {
       abortOnError false
     }
   }
-  
+
   dexOptions {
     javaMaxHeapSize "4g"
   }
@@ -67,7 +67,7 @@ dependencies {
 
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-//  implementation "com.google.android.gms:play-services-ads:$rootProject.adsVersion"
+  //  implementation "com.google.android.gms:play-services-ads:$rootProject.adsVersion"
 
   implementation "com.facebook.android:audience-network-sdk:$rootProject.fbAudienceVersion"
 
