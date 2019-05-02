@@ -7,10 +7,10 @@ android {
 
   signingConfigs {
     release {
-      storeFile file('G:\\Hardik\\KeyStore\\common.jks')
-      storePassword 'common@123'
-      keyAlias = 'common'
-      keyPassword 'common@123'
+      storeFile file('G:\\Hardik\\AppDocs\\BalVarta\\KeyStore\\balvarta.jks')
+      storePassword 'hardik8184'
+      keyAlias = 'balvarta'
+      keyPassword 'hardik8184'
     }
   }
   compileSdkVersion rootProject.compileSdkVersion
