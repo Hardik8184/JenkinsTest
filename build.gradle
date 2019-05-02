@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+  ext.kotlin_version = '1.3.21'
+
+  repositories {
+    jcenter()
+    google()
+    maven { url "https://jitpack.io" }
+    maven { url 'https://maven.fabric.io/public' }
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.4.0'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath 'io.fabric.tools:gradle:1.28.1'
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
+}
+
+allprojects {
+  repositories {
+    jcenter()
+    google()
+    maven { url "https://jitpack.io" }
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+
+// Define versions in a single place
+ext {
+
+  compileSdkVersion = 28
+  minSdkVersion = 16
+  targetSdkVersion = 28
+  buildToolsVersion = '28.0.3'
+
+  // App dependencies
+  appCompatVersion = "1.1.0-alpha04"
+  recyclerVersion = "1.1.0-alpha04"
+  cardViewVersion = "1.0.0"
+  materialVersion = "1.1.0-alpha05"
+  fbAudienceVersion = '5.2.0'
+  adsVersion = '17.2.0'
+  glideVersion = '4.8.0'
+  sdpVersion = '1.0.6'
+
+  // Test dependencies
+  junitVersion = '4.12'
+  runnerVersion = '1.0.2'
+}

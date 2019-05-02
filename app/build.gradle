@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+android {
+
+  signingConfigs {
+      release {
+          storeFile file('G:\\Hardik\\KeyStore\\common.jks')
+          storePassword 'common@123'
+          keyAlias = 'common'
+          keyPassword 'common@123'
+      }
+  }
+  compileSdkVersion rootProject.compileSdkVersion
+  buildToolsVersion rootProject.buildToolsVersion
+
+  defaultConfig {
+    applicationId "com.techno.developer.balvarta"
+    minSdkVersion rootProject.minSdkVersion
+    targetSdkVersion rootProject.targetSdkVersion
+    versionCode 6
+    versionName "1.5"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  android.applicationVariants.all { variant ->
+    variant.outputs.all {
+      outputFileName = "TOI_Android_${variant.name}_${variant.versionName}.apk"
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  android {
+    lintOptions {
+      abortOnError false
+    }
+  }
+  
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+  // dependencies for local unit tests
+  testImplementation "junit:junit:$rootProject.ext.junitVersion"
+
+  // android support libraries
+  implementation "com.google.android.material:material:$rootProject.materialVersion"
+  implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+  implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
+  implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerVersion"
+
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+//  implementation "com.google.android.gms:play-services-ads:$rootProject.adsVersion"
+
+  implementation "com.facebook.android:audience-network-sdk:$rootProject.fbAudienceVersion"
+
+  // https://mvnrepository.com/artifact/sax/sax
+  implementation group: 'sax', name: 'sax', version: '2.0.1'
+
+  // android sdp
+  implementation "com.intuit.sdp:sdp-android:$rootProject.sdpVersion"
+
+  // fabric
+  implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+    transitive = true
+  }
+}
