@@ -26,14 +26,13 @@ android {
 
   buildTypes {
     release {
-      minifyEnabled false
+      minifyEnabled true
+      shrinkResources true
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-  }
 
-  android.applicationVariants.all { variant ->
-    variant.outputs.all {
-      outputFileName = "BVDemo_${variant.name}_${variant.versionName}.apk"
+    debug {
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
 
@@ -50,6 +49,10 @@ android {
 
   dexOptions {
     javaMaxHeapSize "4g"
+  }
+
+  testOptions {
+    unitTests.returnDefaultValues = true
   }
 }
 
