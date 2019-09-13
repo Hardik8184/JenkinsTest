@@ -5,14 +5,6 @@ apply plugin: 'io.fabric'
 
 android {
 
-  signingConfigs {
-    release {
-      storeFile file('G:\\Hardik\\AppDocs\\BalVarta\\KeyStore\\balvarta.jks')
-      storePassword 'hardik8184'
-      keyAlias = 'balvarta'
-      keyPassword 'hardik8184'
-    }
-  }
   compileSdkVersion rootProject.compileSdkVersion
   buildToolsVersion rootProject.buildToolsVersion
 
